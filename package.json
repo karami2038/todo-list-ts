@@ -1,0 +1,16 @@
+{
+  "name": "todo-list-ts",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "boune": "^0.10.0",
+    "hono": "^4.11.4"
+  }
+}
