@@ -1,8 +1,8 @@
 import {Hono} from "hono";
 
-export const apiController = new Hono();
+export const api = new Hono();
 
-apiController.get('/', (c) => {
+api.get('/', (c) => {
     return c.json({
         status: 'ok',
         version: '0.0.1',
@@ -10,7 +10,9 @@ apiController.get('/', (c) => {
     });
 });
 
+
+// TEMP: Temporary implementation, will separate concerns later
 export default {
     port: 3990,
-    fetch: apiController.fetch,
+    fetch: api.fetch,
 };
