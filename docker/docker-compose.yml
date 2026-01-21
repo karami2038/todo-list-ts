@@ -1,7 +1,7 @@
 # Docker Compose configuration for development environment
 
 services:
-  db:
+  database:
     image: postgres:latest
     stop_grace_period: 1m
     environment:
@@ -12,5 +12,13 @@ services:
       - db_data:/var/lib/postgresql
     ports:
       - "${POSTGRES_PORT}:${POSTGRES_PORT}"
+    env_file:
+      - path: ./.env.docker
+        required: true
+      - path: ./.env.docker.development
+        required: false
+      - path: ./.env.docker.testing
+        required: false
 volumes:
   db_data:
+    name: todo-list-ts_postgreSQL_data
